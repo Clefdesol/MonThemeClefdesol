@@ -50,3 +50,74 @@ h1{
 .h15{
   height: 15px;
 }
+
+/* === CENTRAGE PARAGRAPHES GUTENBERG FORCÉ === */
+:root .wp-block-paragraph,
+.editor-styles-wrapper .wp-block-paragraph,
+.wp-block-paragraph.has-text-align-left {
+    text-align: center !important;
+}
+
+.wp-block-paragraph p,
+.wp-block-paragraph,
+p.wp-block-paragraph {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 800px;
+}
+
+/* Gutenberg classes d'alignement */
+.has-text-align-left {
+    text-align: center !important;
+}
+
+.has-text-align-center {
+    text-align: center !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .wp-block-paragraph {
+        max-width: 100% !important;
+        padding: 0 1rem !important;
+    }
+}
+
+/* === ALIGNEMENT DROITE GUTENBERG MAX FORCÉ === */
+.droite-para,
+.droite-para p,
+.droite-para .wp-block-paragraph,
+.wp-block-paragraph.droite-para {
+    text-align: right !important;
+    direction: rtl !important;  /* Force RTL temporaire */
+    unicode-bidi: embed !important;
+    margin-right: 0 !important;
+    margin-left: auto !important;
+    display: block !important;
+}
+
+/* Override TOUS has-text-align */
+.wp-block-paragraph[class*="has-text-align"] {
+    text-align: right !important;
+}
+
+.droite-para[class*="has-text-align-left"],
+.droite-para[class*="has-text-align-center"] {
+    text-align: right !important;
+}
+/* FIX DROITE SPÉCIFIQUE TON HTML */
+div p.has-text-align-right,
+div .has-text-align-right {
+    text-align: right !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Force Gutenberg toolbar align-right */
+.wp-block-paragraph.is-style-alignright,
+.wp-block-paragraph[style*="text-align:right"] {
+    text-align: right !important;
+}
